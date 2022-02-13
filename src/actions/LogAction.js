@@ -1,4 +1,4 @@
-import {GET_LOGS, SET_LOADING,LOGS_ERROR,ADD_LOGS} from './types';
+import {GET_LOGS, SET_LOADING,LOGS_ERROR,ADD_LOGS,DELETE_LOGS} from './types';
 
 //Action to get all the logs
 export const getLogs = () => async dispatch =>  {
@@ -44,6 +44,25 @@ export const addLogs = log => async dispatch =>  {
     }
 };
 
+
+//Action to delete a log from server 
+export const deleteLog = id => async dispatch =>  {
+    try{
+        setLoading();
+        await fetch(`/logs/${id}`,{
+            method: 'DELETE',
+        });
+        dispatch({
+            type:DELETE_LOGS,
+            payload:id
+        });
+    } catch(err) {
+        dispatch({
+            type:LOGS_ERROR,
+            payload:err.response.data
+        });
+    }
+};
 
 //set the loading in the log state to true when api is called.
 export const setLoading = () => {
