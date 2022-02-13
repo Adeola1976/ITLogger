@@ -1,11 +1,7 @@
 import React,{useState} from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import {addLogs} from '../../actions/LogAction';
-import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
 
-
-const AddLogModal = ({addLogs}) => {
+const EditLogModal = () => {
     const [message,setMessage] = useState('');
     const [attention,setAttention] = useState(false);
     const [tech,setTech] = useState('');
@@ -15,14 +11,8 @@ const AddLogModal = ({addLogs}) => {
        })
 
        else {
-          const newLogs = {
-              message,
-              attention,
-              tech,
-              date:new Date()
-          }
-           addLogs(newLogs);
-           M.toast({ html:`log being added by ${tech}`})
+           console.log(message,tech,attention);
+
            //clear field values
            setMessage('');
            setAttention(false);
@@ -30,9 +20,9 @@ const AddLogModal = ({addLogs}) => {
        }
     }
   return (
-   <div id='add-log-modal' className='modal' style={styleModal}>
+   <div id='edit-log-modal' className='modal' style={styleModal}>
          <div className="modal-content">
-             <h4>Enter System Log</h4>
+             <h4>Edit System Log</h4>
              <div className="row">
                  <div className="input-field">
                     <input type='text' name='message' value={message} onChange={e=>setMessage(e.target.value)} />
@@ -69,15 +59,9 @@ const AddLogModal = ({addLogs}) => {
   )
 };
 
-
-
-AddLogModal.propTypes = {
-    addLogs: PropTypes.func.isRequired
- }
-
   const styleModal = {
       width:'75%',
       height:'75%'
   }
 
-export default connect(null,{addLogs}) (AddLogModal);
+export default EditLogModal;

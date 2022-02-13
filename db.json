@@ -13,13 +13,6 @@
       "attention": true,
       "date": "06-02-2019",
       "tech": "John Doe"
-    },
-    {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
-      "attention": false,
-      "date": "01-02-2019",
-      "tech": "Sara Wilson"
     }
   ],
   "techs": [
