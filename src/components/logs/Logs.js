@@ -9,6 +9,7 @@ import {getLogs} from '../../actions/LogAction';
 
     useEffect (() => {
         getLogs();   
+        console.log(logs)
         //eslint-disable-next-line
     }, []);
        

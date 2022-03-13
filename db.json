@@ -1,5 +1,20 @@
 {
-  "logs": [],
+  "logs": [
+    {
+      "message": "fixed sponsor unable to sign up",
+      "attention": false,
+      "tech": "John Doe",
+      "id": 1,
+      "date": "2022-02-13T22:04:46.059Z"
+    },
+    {
+      "message": "Fixed bug on engage",
+      "attention": true,
+      "tech": "Blessing Opar",
+      "id": 2,
+      "date": "2022-03-13T14:54:23.773Z"
+    }
+  ],
   "techs": [
     {
       "id": 1,
